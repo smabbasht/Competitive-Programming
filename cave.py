@@ -14,6 +14,7 @@ def cave(rooms, oper):
         print("T", dest, flush=True)
         dest +=1
 
+
     R, P = input().split()
     R = int(R); P = int(P)
     G[R] = P

@@ -23,6 +23,7 @@ def dfs(visited, graph, node):  #function for dfs
         for neighbour in graph[node]:
             dfs(visited, graph, neighbour)
 
+
 def maximum_fun(n, fun, points):
     G = graph_gen(n, fun, points)
 
