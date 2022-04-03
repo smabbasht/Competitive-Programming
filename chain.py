@@ -1,15 +1,37 @@
-def maximum_fun(n, fun, points):
-    # G = {}
-    dict1 = {}
+def getInNeighbors(G, node):
+    lst = []
+    for key, value in G.items():
+        for i in value:
+            if i == node:
+                lst.append(key)
+    return lst
+
+def graph_gen(n, fun, points):
+    G = dict()
     for i in range(n):
-        dict1[i] = (fun[i], points[i])
+        G[i] = [(fun[i], points[i])]
+    
+    Gr = dict()
+    for i in G.keys():
+        Gr[i] = getInNeighbors(G, i)
+    return Gr
+
+def dfs(visited, graph, node):  #function for dfs 
+    if node not in visited:
+        # print (node)
+        visited.add(node)
+        for neighbour in graph[node]:
+            dfs(visited, graph, neighbour)
+
+def maximum_fun(n, fun, points):
+    G = graph_gen(n, fun, points)
 
     fun_score = 0; funcp = fun[:]; ppc = points[:]
 
     while 1:
         all_paths = []
         for i in range(n-1, -1, -1):
-            if dict1[i][0]==None:
+            if G[i][0]==None:
                 continue
 
             path = []
@@ -22,12 +44,13 @@ def maximum_fun(n, fun, points):
 
             all_paths.append(sum(path))
 
-    print(fun_score)
+    print(max(all_paths))
 
 '''If I take all paths and then take their max'''
 
 
 def main():
+    visited = set()
     n_test = int(input())
     for i in range(n_test):
         n = int(input())
