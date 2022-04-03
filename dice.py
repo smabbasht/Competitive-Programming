@@ -2,8 +2,8 @@ def straight_finder(n, dices):
     dices.sort()
     value = 0
 
-    for _ in range(1, n+1):
-        if dices[_-1] >= (value+1):
+    for _ in range(n):
+        if dices[_] >= (value+1):
             value +=1
     print(value)
 
