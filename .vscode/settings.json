@@ -1,0 +1,7 @@
+{
+    "python.testing.pytestArgs": [
+        "KickStart_2022D"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}

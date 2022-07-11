@@ -1,3 +1,4 @@
-# Google-Code-Jam
-These are my attempts for Google Code Jam Competition.
-Questions are attached for reference
+# Competitive Programming Competitions
+
+These are my attempts for Competition I participated in which includes Google CodeJam, KickStart and some other CodeForces competitions.
+
